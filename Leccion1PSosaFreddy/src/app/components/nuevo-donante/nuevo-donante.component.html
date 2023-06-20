@@ -1,0 +1,48 @@
+<div class="container">
+    <form [formGroup] = "form"
+        >
+        <div class="row mt-2">
+            <div class="col-8">
+                <label>Apellidos</label>
+                <input type="text" class="form-control" formControlName="apellidos">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-8">
+                <label>Nombres</label>
+                <input type="text" class="form-control" formControlName="nombres">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-8">
+                <label>Valor</label>
+                <input type="number" class="form-control" formControlName="valorDonar">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-8">
+                <label>Fecha de Entrega</label>
+                <input type="date" class="form-control" formControlName="fechaEntrega">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-2"></div>
+            <div class="col-4">
+                <button class="btn btn-secondary"
+                    (click)="agregarDonante()"
+                    [disabled]="form.invalid"
+                    >Agregar</button>
+            </div>
+
+            <div class="col-4">
+                <button class="btn btn-info"
+                    (click)="cancelarButton()"
+                    
+                    >Cancelar</button>
+            </div>
+            <div class="col-2"></div>
+
+        </div>
+
+    </form>
+</div>

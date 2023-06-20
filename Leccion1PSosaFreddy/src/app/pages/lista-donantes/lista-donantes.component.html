@@ -1,0 +1,65 @@
+<div>
+	<ng-template #content let-modal>
+		<div class="modal-header">
+			<h4 class="modal-title" id="modal-basic-title">Nuevo Donante</h4>
+			<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('close')"></button>
+		</div>
+		<div class="modal-body">
+			<app-nuevo-donante
+				(agregar)="agregarDonante($event)"
+				(cancelar) = "modal.close('ok')"
+			>
+			</app-nuevo-donante>
+		</div>
+	</ng-template>
+	
+
+
+	<div class="container">
+		<div class="row mt-4">
+			<div class="col-md-4">
+				<h4>Lista de donantes</h4>
+
+			</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<b>Valor Recaudado :</b> {{valorRecaudado | currency}}
+			</div>
+		</div>
+		<div class="row mt-4">
+
+			<div class="col-sm-5"></div>
+			<div class="col-sm-4">
+				<button 
+					class="btn btn-outline-dark"
+					(click)="recolectar()"
+				>
+						Recolectar Contribuciones
+				</button>
+			</div>
+			<div class="col-sm-3">
+				<button 
+					class="btn btn-outline-dark"
+					(click)="nuevoDonante(content)"
+				>
+					Agregar Donante
+				</button>
+			</div>
+
+		</div>
+		<div class="row mt-4">
+			
+			<app-tabla-datos 
+				[donantes]="donantes"
+				class="mt-3">
+			</app-tabla-datos>
+
+		</div>
+
+	</div>
+
+
+
+</div>
+
+

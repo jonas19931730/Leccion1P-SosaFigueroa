@@ -1,0 +1,33 @@
+<div *ngIf="donantes.length==0">
+	<h5>No hay donantes agregados !</h5>
+</div>
+
+<div *ngIf="donantes.length>0">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th class="col-sm-3">Apellidos</th>
+				<th class="col-sm-3">Nombres</th>
+				<th class="col-sm-2">Valor</th>
+				<th class="col-sm-4">Fecha de Entrega</th>	
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let donante of donantes; index as i">
+				<td>
+					{{ donante.apellidos }}
+				</td>
+				<td>
+					{{ donante.nombres }}
+				</td>
+				<td>
+					{{ donante.valorDonar }}
+				</td>
+				<td>
+					{{ donante.fechaEntrega | date : 'dd/MM/yyyy' }}
+				</td>
+	
+			</tr>
+		</tbody>
+	</table>
+</div>
